@@ -1,3 +1,12 @@
+.cardDetailingContainer {
+  position: relative;
+  max-height: 366px;
+  height: 100%;
+  transition: max-height 0.3s ease;
+}
+.cardDetailingContainerOpened {
+  max-height: 1091px;
+}
 .cardContainer {
   height: 366px;
   width: 275px;
@@ -7,6 +16,11 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 8px;
+}
+
+.cardContainer:hover {
+  background: #a3a3a325;
+  cursor: pointer;
 }
 .imageContainer {
   width: 100%;

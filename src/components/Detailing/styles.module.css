@@ -1,0 +1,10 @@
+.detailingContainer {
+  margin: 1rem;
+  width: 100%;
+  height: 648px;
+  border-radius: 8px;
+  background: rgba(38, 38, 38, 0.5);
+  position: absolute;
+  width: 94vw;
+  top: 404px;
+}

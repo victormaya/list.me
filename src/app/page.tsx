@@ -10,6 +10,7 @@ import axios from 'axios';
 import { IProducts } from 'interfaces/products';
 
 export default function Home() {
+  const [currentCard, setCurrentCard] = useState('-1');
   const [products, setProducts] = useState<IProducts>([]);
 
   useEffect(() => {
@@ -25,9 +26,16 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {products.map((item) => (
-        <Card key={item.id} item={item} />
-      ))}
+      <div className={styles.cardsContainer}>
+        {products.map((item) => (
+          <Card
+            key={item.id}
+            item={item}
+            currentCard={currentCard}
+            setCurrentCard={setCurrentCard}
+          />
+        ))}
+      </div>
     </main>
   );
 }
