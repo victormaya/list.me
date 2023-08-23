@@ -1,0 +1,69 @@
+.cardContainer {
+  height: 366px;
+  width: 275px;
+  background: rgba(38, 38, 38, 0.5);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+}
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cardTitle {
+  font-size: var(--font-14);
+  color: var(--color-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.cardBrand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--font-12);
+  color: var(--color-gray);
+  margin-bottom: 12px;
+}
+.cardBrandBall {
+  font-size: 6px;
+  color: var(--color-gray);
+  position: relative;
+  top: -1px;
+}
+.cardButtons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.cardButtonsLeft {
+  display: flex;
+  gap: 12px;
+}
+.cardButton {
+  border: 1px solid rgb(64, 64, 64);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: none;
+  font-size: var(--font-12);
+  padding: 4px 8px;
+  gap: 8px;
+}
+.cardSvg {
+  color: var(--color-yellow);
+}
+
+.cardButton:hover {
+  background: var(--color-yellow);
+  color: var(--color-dark);
+}
+
+.cardButton:hover .cardSvg {
+  color: var(--color-dark);
+}
