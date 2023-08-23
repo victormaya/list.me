@@ -1,45 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik+Iso&display=swap');
+
 /* Reset de CSS */
 
-/* Garantir que todos os elementos tenham margens, preenchimentos e bordas zerados */
 * {
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box; /* Faz com que o preenchimento e a borda não afetem as dimensões do elemento */
+  box-sizing: border-box;
 }
 
-/* Definir uma base consistente para a tipografia */
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* Remover os estilos de lista padrão */
 ul,
 ol {
   list-style: none;
 }
 
-/* Remover decoração de links */
 a {
   text-decoration: none;
-  color: inherit; /* Herda a cor do texto do elemento pai */
+  color: inherit;
 }
 
-/* Definir cores padrão para fundo e texto */
 body {
   background-color: #fff;
   color: #333;
 }
 
-/* Definir largura máxima para o conteúdo central */
 .container {
   max-width: 1200px;
   margin: 0 auto; /* Centralizar o conteúdo na página */
 }
 
-/* Estilos de exemplo para cabeçalhos */
 h1,
 h2,
 h3 {
@@ -47,7 +42,6 @@ h3 {
   margin-bottom: 10px;
 }
 
-/* Estilos de exemplo para elementos de formulário */
 input,
 textarea {
   border: 1px solid #ccc;
@@ -55,7 +49,6 @@ textarea {
   border-radius: 4px;
 }
 
-/* Estilos de exemplo para botões */
 button {
   padding: 10px 20px;
   background-color: #333;
@@ -66,3 +59,16 @@ button {
 }
 
 /* Adicione seus próprios estilos personalizados após este ponto */
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  /* fonts */
+  --font-10: 0.625rem;
+
+  /* colors */
+  --color-red: #e74242;
+  --color-white: #ffffff;
+}
