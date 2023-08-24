@@ -61,22 +61,7 @@
   display: flex;
   gap: 40px;
 }
-.megaphone {
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--color-gray-dark);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-white);
-  cursor: pointer;
-}
-.megaphone:hover {
-  border: 1px solid var(--color-white);
-  background: var(--color-white);
-  color: var(--color-dark);
-}
+
 .downloadLikesSaves {
   border: 1px solid var(--color-gray-dark);
   margin-top: 25px;
@@ -121,7 +106,6 @@
   align-items: center;
   gap: 0.5rem;
   border-radius: 8px;
-  margin-left: auto;
   border: 1px solid var(--color-yellow);
 }
 .bigButton:hover {
@@ -134,5 +118,26 @@
   align-items: center;
   gap: 0.5rem;
   border-radius: 8px;
+  margin-left: auto;
+}
+
+.iconButton {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-gray-dark);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  cursor: pointer;
+}
+.iconButton:hover {
+  border: 1px solid var(--color-white);
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+.megaphone {
   margin-left: auto;
 }

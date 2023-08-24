@@ -46,9 +46,6 @@ function Detailing({ left, item }: { left: number | null; item: IProduct }) {
               <span>Marca:</span> {item.brand}
             </h2>
           </div>
-          <div className={styles.megaphone}>
-            <BsMegaphone />
-          </div>
         </div>
         <div className={styles.downloadLikesSaves}>
           <BsDownload /> {item.totalDownloads} downloads
@@ -68,14 +65,17 @@ function Detailing({ left, item }: { left: number | null; item: IProduct }) {
           <li>{item.description}</li>
         </ul>
         <div className={styles.contentDown}>
-          <div className={styles.megaphone}>
-            <AiOutlineHeart />
-          </div>
-          <div className={styles.megaphone}>
-            <BsBookmark />
-          </div>
           <div className={styles.bigButton}>
             <BsDownload /> Utilizar e especificar
+          </div>
+          <div className={styles.iconButton}>
+            <AiOutlineHeart />
+          </div>
+          <div className={styles.iconButton}>
+            <BsBookmark />
+          </div>
+          <div className={`${styles.iconButton} ${styles.megaphone}`}>
+            <BsMegaphone />
           </div>
         </div>
       </div>
