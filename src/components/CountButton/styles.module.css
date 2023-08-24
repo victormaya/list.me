@@ -1,0 +1,24 @@
+.countButton{
+  border: 1px solid rgb(64, 64, 64);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: none;
+  font-size: var(--font-12);
+  padding: 4px 8px;
+  gap: 8px;
+}
+
+.countButton:hover {
+  background: var(--color-yellow);
+  color: var(--color-dark);
+}
+
+.cardSvg {
+  color: var(--color-yellow);
+}
+
+.countButton:hover .cardSvg {
+  color: var(--color-dark);
+}

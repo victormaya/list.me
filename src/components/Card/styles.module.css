@@ -57,26 +57,3 @@
   display: flex;
   gap: 12px;
 }
-.cardButton {
-  border: 1px solid rgb(64, 64, 64);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  background: none;
-  font-size: var(--font-12);
-  padding: 4px 8px;
-  gap: 8px;
-}
-.cardSvg {
-  color: var(--color-yellow);
-}
-
-.cardButton:hover {
-  background: var(--color-yellow);
-  color: var(--color-dark);
-}
-
-.cardButton:hover .cardSvg {
-  color: var(--color-dark);
-}

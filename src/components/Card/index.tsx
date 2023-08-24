@@ -6,9 +6,8 @@ import React, {
   useRef,
   useState
 } from 'react';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { BsBookmark, BsDownload } from 'react-icons/bs';
 
+import CountButton from 'components/CountButton';
 import Detailing from 'components/Detailing';
 import Tag from 'components/Tag';
 
@@ -77,20 +76,11 @@ function Card({
         </span>
         <div className={styles.cardButtons}>
           <div className={styles.cardButtonsLeft}>
-            <button className={styles.cardButton}>
-              <BsDownload className={styles.cardSvg} />
-              {item.totalDownloads}
-            </button>
-            <button className={styles.cardButton}>
-              <AiOutlineHeart />
-              {item.totalLikes}
-            </button>
+            <CountButton type="download" total={item.totalDownloads} />
+            <CountButton type="like" total={item.totalLikes} />
           </div>
           <div className={styles.cardButtonsRight}>
-            <button className={styles.cardButton}>
-              <BsBookmark />
-              {item.totalBookmarks}
-            </button>
+            <CountButton type="save" total={item.totalBookmarks} />
           </div>
         </div>
       </div>
