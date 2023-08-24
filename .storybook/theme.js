@@ -4,7 +4,7 @@ import logo from '../public/img/nextjs-logo.svg'
 
 export default create({
   base: 'dark',
-  colorSecondary: theme.colors.grayLight,
+  colorSecondary: theme.colors.red,
   brandTitle: 'List.me',
   brandImage: logo
 })
