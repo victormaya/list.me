@@ -7,6 +7,7 @@ import { MdOutlineClose } from 'react-icons/md';
 import styles from './styles.module.css';
 
 import { IProduct } from 'interfaces/products';
+import TotalCounts from 'components/TotalCounts';
 
 function Detailing({
   left,
@@ -63,13 +64,7 @@ function Detailing({
             </h2>
           </div>
         </div>
-        <div className={styles.downloadLikesSaves}>
-          <BsDownload /> {item.totalDownloads} downloads
-          <AiOutlineHeart />
-          {item.totalBookmarks} likes
-          <BsBookmark />
-          {item.totalBookmarks} salvos
-        </div>
+        <TotalCounts item={item} />
         <p className={styles.detailsTitle}>Detalhes do Produto</p>
         <ul className={styles.details}>
           <li>Superficie: {item.surface}</li>

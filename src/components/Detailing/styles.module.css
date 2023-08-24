@@ -62,20 +62,6 @@
   gap: 40px;
 }
 
-.downloadLikesSaves {
-  border: 1px solid var(--color-gray-dark);
-  margin-top: 25px;
-  color: var(--color-gray-light);
-  justify-self: flex-start;
-  padding: 1rem 1rem 1rem 0;
-  border-radius: 8px;
-  font-size: var(--font-12);
-}
-
-.downloadLikesSaves svg {
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
 .detailsTitle {
   font-size: var(--font-16);
   color: var(--color-white);
@@ -109,16 +95,8 @@
   border: 1px solid var(--color-yellow);
 }
 .bigButton:hover {
-  height: 48px;
   background: var(--color-dark);
   color: var(--color-yellow);
-  cursor: pointer;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 8px;
-  margin-left: auto;
 }
 
 .iconButton {
