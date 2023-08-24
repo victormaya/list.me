@@ -141,3 +141,25 @@
 .megaphone {
   margin-left: auto;
 }
+
+.closeButton {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: var(--font-24);
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-white);
+  border: 1px solid var(--color-gray-dark);
+  background: none;
+}
+
+.closeButton:hover {
+  border: 1px solid var(--color-white);
+  background: var(--color-white);
+  color: var(--color-dark);
+}

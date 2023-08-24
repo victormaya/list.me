@@ -94,7 +94,13 @@ function Card({
           </div>
         </div>
       </div>
-      {currentCard === item.id && <Detailing item={item} left={elementLeft} />}
+      {currentCard === item.id && (
+        <Detailing
+          item={item}
+          left={elementLeft}
+          setCurrentCard={setCurrentCard}
+        />
+      )}
     </div>
   );
 }

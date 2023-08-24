@@ -2,12 +2,21 @@ import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBookmark, BsDownload, BsMegaphone } from 'react-icons/bs';
+import { MdOutlineClose } from 'react-icons/md';
 
 import styles from './styles.module.css';
 
 import { IProduct } from 'interfaces/products';
 
-function Detailing({ left, item }: { left: number | null; item: IProduct }) {
+function Detailing({
+  left,
+  item,
+  setCurrentCard
+}: {
+  left: number | null;
+  item: IProduct;
+  setCurrentCard: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const detailingContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -22,6 +31,13 @@ function Detailing({ left, item }: { left: number | null; item: IProduct }) {
       ref={detailingContainerRef}
       className={`${styles.detailingContainer} ${styles.opened}`}
     >
+      <button
+        className={styles.closeButton}
+        type="button"
+        onClick={() => setCurrentCard('-1')}
+      >
+        <MdOutlineClose />
+      </button>
       <div className={styles.leftSide}>
         <div className={styles.miniThumb}>
           <Image
