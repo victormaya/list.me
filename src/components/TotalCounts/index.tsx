@@ -1,27 +1,27 @@
-import React from 'react';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { BsDownload, BsBookmark } from 'react-icons/bs';
+import React from 'react'
+import { AiOutlineHeart } from 'react-icons/ai'
+import { BsDownload, BsBookmark } from 'react-icons/bs'
 
-import styles from './styles.module.css';
+import { IProduct } from 'interfaces/products'
 
-import { IProduct } from 'interfaces/products';
+import { DownloadLikesSaves } from './styles'
 
 function TotalCounts({ item }: { item: IProduct }) {
   return (
-    <ul className={styles.downloadLikesSaves}>
+    <DownloadLikesSaves>
       <li>
         <BsDownload /> {item.totalDownloads} downloads
       </li>
-      <li className={styles.withDot}>
+      <li className="withDot">
         <AiOutlineHeart />
         {item.totalBookmarks} likes
       </li>
-      <li className={styles.withDot}>
+      <li className="withDot">
         <BsBookmark />
         {item.totalBookmarks} salvos
       </li>
-    </ul>
-  );
+    </DownloadLikesSaves>
+  )
 }
 
-export default TotalCounts;
+export default TotalCounts

@@ -1,89 +1,94 @@
-import Image from 'next/image';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, {
   Dispatch,
   SetStateAction,
   useEffect,
   useRef,
   useState
-} from 'react';
+} from 'react'
 
-import CountButton from 'components/CountButton';
-import Detailing from 'components/Detailing';
-import Tag from 'components/Tag';
+import CountButton from 'components/CountButton'
+import Detailing from 'components/Detailing'
+import Tag from 'components/Tag'
+import { IProduct } from 'interfaces/products'
+import Image from 'next/image'
 
-import styles from './styles.module.css';
-
-import { IProduct } from 'interfaces/products';
+import {
+  CardDetailingContainer,
+  CardContainer,
+  ImageContainer,
+  CardTitle,
+  CardBrand,
+  CardBrandBall,
+  CardButtons,
+  CardButtonsLeft
+} from './styles'
 
 function Card({
   item,
   currentCard,
   setCurrentCard
 }: {
-  item: IProduct;
-  currentCard: string;
-  setCurrentCard: Dispatch<SetStateAction<string>>;
+  item: IProduct
+  currentCard: string
+  setCurrentCard: Dispatch<SetStateAction<string>>
 }) {
-  const elementRef = useRef<HTMLDivElement | null>(null);
-  const [elementLeft, setElementLeft] = useState<number | null>(null);
+  const elementRef = useRef<HTMLDivElement | null>(null)
+  const [elementLeft, setElementLeft] = useState<number | null>(null)
 
   useEffect(() => {
     if (elementRef.current) {
-      const { left } = elementRef.current.getBoundingClientRect();
-      setElementLeft(left);
+      const { left } = elementRef.current.getBoundingClientRect()
+      setElementLeft(left)
     }
-  }, [currentCard]);
+  }, [currentCard])
 
   const handleButtonClick = (id: string) => {
-    setCurrentCard(id);
-  };
+    setCurrentCard(id)
+  }
 
   function formatSize(value: string) {
     if (!value.includes('x')) {
-      return null;
+      return null
     }
     return (
       <>
-        <span className={styles.cardBrandBall}>●</span>
+        <CardBrandBall>●</CardBrandBall>
         {item.size.replace(/"/g, '')}
       </>
-    );
+    )
   }
 
   return (
-    <div
-      className={`${styles.cardDetailingContainer} ${
-        currentCard === item.id ? styles.cardDetailingContainerOpened : ''
-      }`}
-    >
-      <div
-        className={styles.cardContainer}
+    <CardDetailingContainer opened={currentCard === item.id}>
+      <CardContainer
         ref={elementRef}
         onClick={() => handleButtonClick(item.id)}
       >
         <Tag />
-        <div className={styles.imageContainer}>
+        <ImageContainer>
           <Image
             src={item.thumbnailUrl}
             alt={item.title}
             width={243}
             height={243}
           />
-        </div>
-        <p className={styles.cardTitle}>{item.title}</p>
-        <span className={styles.cardBrand}>
+        </ImageContainer>
+        <CardTitle>{item.title}</CardTitle>
+        <CardBrand>
           {item.brand.replace(/"/g, '')} {formatSize(item.size)}
-        </span>
-        <div className={styles.cardButtons}>
-          <div className={styles.cardButtonsLeft}>
+        </CardBrand>
+        <CardButtons>
+          <CardButtonsLeft>
             <CountButton type="download" total={item.totalDownloads} />
             <CountButton type="like" total={item.totalLikes} />
-          </div>
-          <div className={styles.cardButtonsRight}>
+          </CardButtonsLeft>
+          <div>
             <CountButton type="save" total={item.totalBookmarks} />
           </div>
-        </div>
-      </div>
+        </CardButtons>
+      </CardContainer>
       {currentCard === item.id && (
         <Detailing
           item={item}
@@ -91,8 +96,8 @@ function Card({
           setCurrentCard={setCurrentCard}
         />
       )}
-    </div>
-  );
+    </CardDetailingContainer>
+  )
 }
 
-export default Card;
+export default Card

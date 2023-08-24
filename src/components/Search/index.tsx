@@ -4,22 +4,21 @@ import React, {
   useEffect,
   useRef,
   useState
-} from 'react';
-import { BsSearch } from 'react-icons/bs';
+} from 'react'
+import { BsSearch } from 'react-icons/bs'
 
-import styles from './styles.module.css';
-
-import useDebounce from '../../hooks/useDebounce'; // Importando o hook useDebounce
+import useDebounce from '../../hooks/useDebounce' // Importando o hook useDebounce
+import { InputContainer, SearchContainer, SearchInput } from './styles'
 
 function Search({
   setSearchText
 }: {
-  setSearchText: Dispatch<SetStateAction<string>>;
+  setSearchText: Dispatch<SetStateAction<string>>
 }) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [inputValue, setInputValue] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [inputValue, setInputValue] = useState('')
 
-  const debouncedSearchText = useDebounce(inputValue, 1000);
+  const debouncedSearchText = useDebounce(inputValue, 1000)
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -27,41 +26,40 @@ function Search({
         (event.key === 'f' || event.key === 'F') &&
         (event.ctrlKey || event.metaKey)
       ) {
-        event.preventDefault();
-        inputRef.current?.focus();
+        event.preventDefault()
+        inputRef.current?.focus()
       }
-    };
+    }
 
-    window.addEventListener('keydown', handleKeyPress);
+    window.addEventListener('keydown', handleKeyPress)
 
     return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
+      window.removeEventListener('keydown', handleKeyPress)
+    }
+  }, [])
 
   useEffect(() => {
-    setSearchText(debouncedSearchText);
-  }, [debouncedSearchText, setSearchText]);
+    setSearchText(debouncedSearchText)
+  }, [debouncedSearchText, setSearchText])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
+    setInputValue(event.target.value)
+  }
 
   return (
-    <div className={styles.searchContainer}>
-      <div className={styles.inputContainer}>
-        <input
-          className={styles.searchInput}
+    <SearchContainer>
+      <InputContainer>
+        <SearchInput
           ref={inputRef}
           type="text"
           placeholder="Busque o produto desejado"
           value={inputValue}
           onChange={handleInputChange}
         />
-        <BsSearch />
-      </div>
-    </div>
-  );
+        <BsSearch data-testid="search-icon" />
+      </InputContainer>
+    </SearchContainer>
+  )
 }
 
-export default Search;
+export default Search

@@ -13,6 +13,7 @@
 - Axios
 - Jest
 - React Testing Library
+- Styled-Components
 
 ### 🛠 Mão na massa:
 
@@ -20,7 +21,7 @@
 
 Clone o repositório:
 
-`git clone https://github.com/victormaya/test-list.me
+`git clone
 `
 
 ### 💻 Executando o projeto 🚀
@@ -32,3 +33,11 @@ yarn
 
 # Para startar o projeto utilize
 yarn dev
+
+
+# Para startar a API
+yarn api
+
+# Para startar o teste
+yarn test
+

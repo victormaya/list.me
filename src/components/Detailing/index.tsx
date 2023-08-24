@@ -1,88 +1,97 @@
-import Image from 'next/image';
-import React, { useEffect, useRef } from 'react';
-import { BsDownload } from 'react-icons/bs';
+import React, { useEffect, useRef } from 'react'
+import { BsDownload } from 'react-icons/bs'
 
-import CloseButton from 'components/CloseButton';
-import IconButton from 'components/IconButton';
-import TotalCounts from 'components/TotalCounts';
+import CloseButton from 'components/CloseButton'
+import IconButton from 'components/IconButton'
+import TotalCounts from 'components/TotalCounts'
+import { IProduct } from 'interfaces/products'
+import Image from 'next/image'
 
-import styles from './styles.module.css';
-
-import { IProduct } from 'interfaces/products';
+import {
+  BigButton,
+  ContentDown,
+  DetailingContainer,
+  Details,
+  DetailsTitle,
+  ItemBrand,
+  ItemTitle,
+  LeftSide,
+  Megaphone,
+  MiniThumb,
+  RightSide,
+  TitleBrandMegaphone
+} from './styles'
 
 function Detailing({
   left,
   item,
   setCurrentCard
 }: {
-  left: number | null;
-  item: IProduct;
-  setCurrentCard: React.Dispatch<React.SetStateAction<string>>;
+  left: number | null
+  item: IProduct
+  setCurrentCard: React.Dispatch<React.SetStateAction<string>>
 }) {
-  const detailingContainerRef = useRef<HTMLDivElement | null>(null);
+  const detailingContainerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (detailingContainerRef.current && left) {
-      const value = left - 38;
-      detailingContainerRef.current.style.left = `-${value}px`;
+      const value = left - 38
+      detailingContainerRef.current.style.left = `-${value}px`
     }
-  }, [left]);
+  }, [left])
 
   return (
-    <div
-      ref={detailingContainerRef}
-      className={`${styles.detailingContainer} ${styles.opened}`}
-    >
+    <DetailingContainer ref={detailingContainerRef}>
       <CloseButton handleClick={() => setCurrentCard('-1')} />
-      <div className={styles.leftSide}>
-        <div className={styles.miniThumb}>
+      <LeftSide>
+        <MiniThumb>
           <Image
             src={item.thumbnailUrl}
             alt={item.title}
             width={54}
             height={54}
           />
-        </div>
+        </MiniThumb>
         <Image
           src={item.thumbnailUrl}
           alt={item.title}
           width={356}
           height={356}
         />
-      </div>
-      <div className={styles.rightSide}>
-        <div className={styles.titleBrandMegaphone}>
-          <div className={styles.ttitleBrand}>
-            <h1 className={styles.itemTitle}>{item.title}</h1>
-            <h2 className={styles.itemBrand}>
+      </LeftSide>
+      <RightSide>
+        <TitleBrandMegaphone>
+          <div>
+            <ItemTitle>{item.title}</ItemTitle>
+            <ItemBrand>
               <span>Marca:</span> {item.brand}
-            </h2>
+            </ItemBrand>
           </div>
-        </div>
+        </TitleBrandMegaphone>
         <TotalCounts item={item} />
-        <p className={styles.detailsTitle}>Detalhes do Produto</p>
-        <ul className={styles.details}>
+        <DetailsTitle>Detalhes do Produto</DetailsTitle>
+        <Details>
           <li>Superficie: {item.surface}</li>
           <li>Formato: {item.size}</li>
           <li>Reprodução: {item.reproduction}</li>
-        </ul>
-        <p className={styles.detailsTitle}>Descrição</p>
-        <ul className={styles.details}>
+        </Details>
+        <DetailsTitle>Descrição</DetailsTitle>
+        <Details>
           <li>{item.description}</li>
-        </ul>
-        <div className={styles.contentDown}>
-          <div className={styles.bigButton}>
+        </Details>
+        <ContentDown>
+          <BigButton>
             <BsDownload /> Utilizar e especificar
-          </div>
+          </BigButton>
           <IconButton type="like" />
           <IconButton type="save" />
-          <div className={styles.megaphone}>
+          <Megaphone>
             <IconButton type="megaphone" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+          </Megaphone>
+        </ContentDown>
+      </RightSide>
+    </DetailingContainer>
+  )
 }
 
-export default Detailing;
+export default Detailing

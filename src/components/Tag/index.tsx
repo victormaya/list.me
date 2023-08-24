@@ -1,9 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-import styles from './styles.module.css';
+import styled from 'styled-components'
+import theme from 'styles/theme'
+
+export const TagText = styled.p`
+  background: ${theme.colors.red};
+  border-radius: 4px !important;
+  padding: 4px;
+  font-size: ${theme.fontSizes.s10};
+  color: ${theme.colors.white};
+`
 
 function Tag() {
-  return <p className={styles.tagText}>Novo</p>;
+  return <TagText>Novo</TagText>
 }
 
-export default Tag;
+export default Tag
