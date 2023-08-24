@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { BsBookmark, BsDownload, BsMegaphone } from 'react-icons/bs';
-import { MdOutlineClose } from 'react-icons/md';
+import { BsDownload } from 'react-icons/bs';
+
+import CloseButton from 'components/CloseButton';
+import IconButton from 'components/IconButton';
+import TotalCounts from 'components/TotalCounts';
 
 import styles from './styles.module.css';
 
 import { IProduct } from 'interfaces/products';
-import TotalCounts from 'components/TotalCounts';
-import IconButton from 'components/IconButton';
 
 function Detailing({
   left,
@@ -33,13 +33,7 @@ function Detailing({
       ref={detailingContainerRef}
       className={`${styles.detailingContainer} ${styles.opened}`}
     >
-      <button
-        className={styles.closeButton}
-        type="button"
-        onClick={() => setCurrentCard('-1')}
-      >
-        <MdOutlineClose />
-      </button>
+      <CloseButton handleClick={() => setCurrentCard('-1')} />
       <div className={styles.leftSide}>
         <div className={styles.miniThumb}>
           <Image
