@@ -2,7 +2,6 @@
   position: relative;
   max-height: 366px;
   height: 100%;
-  transition: max-height 0.3s ease;
 }
 .cardDetailingContainerOpened {
   max-height: 1091px;
