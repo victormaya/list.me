@@ -8,6 +8,7 @@ import styles from './styles.module.css';
 
 import { IProduct } from 'interfaces/products';
 import TotalCounts from 'components/TotalCounts';
+import IconButton from 'components/IconButton';
 
 function Detailing({
   left,
@@ -79,14 +80,10 @@ function Detailing({
           <div className={styles.bigButton}>
             <BsDownload /> Utilizar e especificar
           </div>
-          <div className={styles.iconButton}>
-            <AiOutlineHeart />
-          </div>
-          <div className={styles.iconButton}>
-            <BsBookmark />
-          </div>
-          <div className={`${styles.iconButton} ${styles.megaphone}`}>
-            <BsMegaphone />
+          <IconButton type="like" />
+          <IconButton type="save" />
+          <div className={styles.megaphone}>
+            <IconButton type="megaphone" />
           </div>
         </div>
       </div>
