@@ -20,7 +20,7 @@
     "test:ci": "jest --ci",
     "test:staged": "jest --findRelatedTests",
     "generate": "plop --plopfile generators/plopfile.js",
-    "storybook": "start-storybook -p 6006",
+    "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook ",
     "serve-storybook": "serve storybook-static",
     "prepare": "husky install",

@@ -41,3 +41,6 @@ yarn api
 # Para startar o teste
 yarn test
 
+# Para startar o Storybook
+yarn sb
+
