@@ -13,9 +13,17 @@ export const DownloadLikesSaves = styled.ul`
 
   li {
     margin-right: 2rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 5px;
+    span {
+      @media (max-width: 660px) {
+        display: none;
+      }
+    }
+    :last-child {
+      margin-right: 0;
+    }
   }
 
   .withDot {

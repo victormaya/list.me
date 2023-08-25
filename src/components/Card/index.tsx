@@ -38,9 +38,19 @@ function Card({
   const [elementLeft, setElementLeft] = useState<number | null>(null)
 
   useEffect(() => {
-    if (elementRef.current) {
-      const { left } = elementRef.current.getBoundingClientRect()
-      setElementLeft(left)
+    const updateElementLeft = () => {
+      if (elementRef.current) {
+        const { left } = elementRef.current.getBoundingClientRect()
+        setElementLeft(left)
+      }
+    }
+
+    updateElementLeft()
+
+    window.addEventListener('resize', updateElementLeft)
+
+    return () => {
+      window.removeEventListener('resize', updateElementLeft)
     }
   }, [currentCard])
 

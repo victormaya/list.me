@@ -13,10 +13,6 @@ export const CardsContainer = styled.div`
   gap: 38px;
   padding: 2rem 0;
   padding-top: 6rem;
-
-  @media (max-width: 1839px) {
-    width: 1527px;
-  }
   @media (max-width: 1839px) {
     width: 1527px;
   }

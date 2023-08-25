@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BsDownload } from 'react-icons/bs'
 
 import CloseButton from 'components/CloseButton'
@@ -30,18 +30,11 @@ function Detailing({
   left: number | null
   item: IProduct
   setCurrentCard: React.Dispatch<React.SetStateAction<string>>
-}) {
-  const detailingContainerRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    if (detailingContainerRef.current && left) {
-      const value = left - 38
-      detailingContainerRef.current.style.left = `-${value}px`
-    }
-  }, [left])
+}): JSX.Element {
+  const position = -left
 
   return (
-    <DetailingContainer ref={detailingContainerRef}>
+    <DetailingContainer position={position}>
       <CloseButton handleClick={() => setCurrentCard('-1')} />
       <LeftSide>
         <MiniThumb>
