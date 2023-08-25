@@ -23,7 +23,6 @@
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook ",
     "serve-storybook": "serve storybook-static",
-    "prepare": "husky install",
     "api": "json-server --watch src/api/mockApi.json --port 3001"
   },
   "eslintConfig": {
@@ -31,6 +30,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "json-server": "^0.17.3",
     "next": "^12.3.1",
     "next-pwa": "^5.6.0",
     "next-seo": "^5.5.0",
