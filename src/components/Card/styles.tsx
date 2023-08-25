@@ -3,8 +3,7 @@ import theme from 'styles/theme'
 
 export const CardDetailingContainer = styled.div<{ opened: boolean }>`
   position: relative;
-  max-height: ${(props) => (props.opened ? '1091px' : '366px')};
-  height: 100%;
+  height: ${(props) => (props.opened ? '1091px' : '366px')};
 `
 export const CardContainer = styled.div`
   height: 366px;
